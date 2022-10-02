@@ -1,5 +1,6 @@
 ## Setup
 
+- Check out my demo [circuit-toggle-app](https://github.com/dkrozelle/circuit-panel/tree/with-redux) for a working example with sliced redux-toolkit demo
 - [tutorial](https://redux-toolkit.js.org/tutorials/quick-start)
 
 ```
