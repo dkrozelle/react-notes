@@ -1,6 +1,7 @@
 ## Setup
 
 - Check out my demo [circuit-toggle-app](https://github.com/dkrozelle/circuit-panel/tree/with-redux) for a working example with sliced redux-toolkit demo
+- These notes and my demo are based on [Udemy react-complete-guide](https://github.com/academind/react-complete-guide-code/tree/18-diving-into-redux/code/12-finished)
 - Official redux-toolkit [tutorial](https://redux-toolkit.js.org/tutorials/quick-start)
 
 ```
@@ -19,6 +20,7 @@ npm install @reduxjs/toolkit react-redux
   -  reducer functions that modify the state. 
      -  Redux requires that we write all state updates immutably, by making copies of data and updating the copies. However, Redux Toolkit's createSlice and createReducer APIs use Immer inside to allow us to write "mutating" update logic that becomes correct immutable updates.
      -  the names you use here are function names on the exported slice.actions object. This lets us call the reducer functions directly without the need to pass normal {type:'ADD'} style actions.
+
 
 ```js
 import { createSlice } from '@reduxjs/toolkit';
@@ -47,7 +49,7 @@ export const authActions = authSlice.actions;
 ## Grouping slices into a single store
 
 - We import individual slices, provide mapping names and export the store
-- 
+
 ```js
 import { configureStore } from '@reduxjs/toolkit';
 
@@ -83,6 +85,7 @@ return(<div>
 ## Update store variables via useDispatch
 
 - to use the redux reducer functions, you need call them as a Dispatch argument. Note these are actually executed with "()" and any payload.
+ 
 ```js
 import { useDispatch } from 'react-redux';
 import { authActions } from '../store/auth';
@@ -103,7 +106,7 @@ const Component () => {
 ## Wrap App in provider
 
 - Make sure you wrap a provider that is linked to your store to the top index.js
-- 
+
 ```js
 import store from './store/index'
 import { Provider } from 'react-redux'
